@@ -1,0 +1,29 @@
+.task-card {
+    border: 1px solid rgb(212, 201, 99);
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+.card-holder {
+    display: inline-block;
+    border: 1px solid rgb(189, 189, 187);
+    width: 190px;
+    height: 400px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    overflow-y: scroll;
+}
+.assignee {
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0);
+    width: 190px;
+    height: 400px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    overflow-y: scroll;
+
+}
