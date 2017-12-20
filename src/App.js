@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CardHolder from './components/CardHolder';
-import Assignee from './components/Assignee';
+import AssigneeGroup from './components/AssigneeGroup';
 
 class App extends Component {
 
@@ -32,7 +31,7 @@ class App extends Component {
         <h1>Task Dealer</h1>
         <CardHolder />
         <div id="assignee" ref={node => this.assigneeDiv = node} >
-          <Assignee />
+          <AssigneeGroup />
         </div>
       </div>
     );

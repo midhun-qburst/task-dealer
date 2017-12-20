@@ -7,23 +7,36 @@
     padding: 5px;
 }
 .card-holder {
-    display: inline-block;
     border: 1px solid rgb(189, 189, 187);
     width: 190px;
-    height: 400px;
+    height: 600px;
     border-radius: 5px;
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    float: left;
 }
 .assignee {
     display: inline-block;
     border: 1px solid rgb(0, 0, 0);
     width: 190px;
-    height: 400px;
+    height: 551px;
     border-radius: 5px;
     margin: 10px;
     padding: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 0 0 auto;
+    
 
+}
+.assignee-group {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid rgb(0, 0, 0);
+    width: 1194px;
+    height: 600px;
+    border-radius: 5px;
+    margin: 5px;
+    overflow-x: scroll;
 }
