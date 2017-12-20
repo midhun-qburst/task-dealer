@@ -13,7 +13,7 @@ class App extends Component {
   handleDrop = (ev) => {
     this.assigneeDiv.addEventListener('drop', (ev) => {
       ev.preventDefault();
-      var data = ev.dataTransfer.getData("text ");
+      var data = ev.dataTransfer.getData("card");
       ev.target.appendChild(document.getElementById(data));
     });
   }
@@ -24,6 +24,11 @@ class App extends Component {
     });
     this.assigneeDiv.addEventListener('drop', this.handleDrop());
   }
+  componentWillUnmount() {debugger
+    this.assigneeDiv.removeEventListener('drop',this.dragEventFunc());
+    this.assigneeDiv.removeEventListener('dragover',this.dragEventFunc());
+
+}
 
   render() {
     return (

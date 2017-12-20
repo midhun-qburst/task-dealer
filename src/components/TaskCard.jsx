@@ -9,7 +9,7 @@ export default class TaskCard extends Component {
          
     dragEventFunc = () => {
     this.cardDiv.addEventListener('dragstart',(ev)=> {
-       ev.dataTransfer.setData("text", ev.target.id); 
+       ev.dataTransfer.setData("card", ev.target.id); 
      } );
     }
     componentDidMount() {
