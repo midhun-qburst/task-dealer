@@ -10,22 +10,34 @@ class App extends Component {
     this.assigneeDiv = undefined;
   }
 
-  handleDrop = (ev) => {
+  // handleDrop = () => {
+  //   this.assigneeDiv.addEventListener('drop', (ev) => {
+  //     ev.preventDefault();
+  //     var data = ev.dataTransfer.getData("card");
+  //     ev.target.appendChild(document.getElementById(data));
+  //   });
+  // }
+  
+  componentDidMount() {
+    this.assigneeDiv.addEventListener('dragover', (ev) => {
+      ev.preventDefault();
+    });
+    this.cardHolderDiv.addEventListener('dragover', (ev) => {
+      ev.preventDefault();
+    });
     this.assigneeDiv.addEventListener('drop', (ev) => {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("card");
       ev.target.appendChild(document.getElementById(data));
     });
-  }
-
-  componentDidMount() {
-    this.assigneeDiv.addEventListener('dragover', (ev) => {
+    this.cardHolderDiv.addEventListener('drop', (ev) => {
       ev.preventDefault();
+      var data = ev.dataTransfer.getData("card");
+      ev.target.appendChild(document.getElementById(data));
     });
-    this.assigneeDiv.addEventListener('drop', this.handleDrop());
-  }
+    }
   componentWillUnmount() {debugger
-    this.assigneeDiv.removeEventListener('drop',this.dragEventFunc());
+    this.assigneeDiv.removeEventListener('drop',this.handleDrop());
     this.assigneeDiv.removeEventListener('dragover',this.dragEventFunc());
 
 }
@@ -34,7 +46,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Task Dealer</h1>
+        <div id="cardHolder" ref={node => this.cardHolderDiv = node} >
         <CardHolder />
+        </div>
         <div id="assignee" ref={node => this.assigneeDiv = node} >
           <AssigneeGroup />
         </div>

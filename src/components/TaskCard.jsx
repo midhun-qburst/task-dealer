@@ -7,22 +7,22 @@ export default class TaskCard extends Component {
         this.cardDiv = undefined;
     }
          
-    dragEventFunc = () => {
+    handleDragStart = () => {
     this.cardDiv.addEventListener('dragstart',(ev)=> {
        ev.dataTransfer.setData("card", ev.target.id); 
      } );
     }
     componentDidMount() {
-        this.cardDiv.addEventListener('dragstart',this.dragEventFunc());
+        this.cardDiv.addEventListener('dragstart',this.handleDragStart());
     }
-    componentWillUnmount() {debugger
-        this.cardDiv.removeEventListener('dragstart',this.dragEventFunc());
+    componentWillUnmount() {
+        this.cardDiv.removeEventListener('dragstart',this.handleDragStart());
 
     }
 
     render() {        
       return (
-          <div className="task-card" id ="card"  ref={node => this.cardDiv = node} draggable>
+          <div className="task-card" id ={this.props.id}  ref={node => this.cardDiv = node} draggable>
               <label htmlFor="">Task id: </label>
           </div>
       );

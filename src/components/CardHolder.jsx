@@ -7,9 +7,9 @@ export default class CardHolder extends Component {
       return (
           <div className="card-holder" draggable>
           <label htmlFor="">...Unassigned...</label>
-              <TaskCard/>
-              <TaskCard/>
-              <TaskCard/>
+              <TaskCard id="1"/>
+              <TaskCard id="2"/>
+              <TaskCard id="3"/>
           </div>
       );
     }
