@@ -5,11 +5,12 @@ import '../styles/style.css';
 export default class CardHolder extends Component {
     render() {
       return (
-          <div className="card-holder" draggable>
+          <div className="card-holder">
           <label htmlFor="">...Unassigned...</label>
-              <TaskCard id="1"/>
-              <TaskCard id="2"/>
-              <TaskCard id="3"/>
+          {this.props.cards.map( (card)=> {
+              return <TaskCard id= {card.taskId}/>
+          }
+          )}
           </div>
       );
     }

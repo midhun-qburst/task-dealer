@@ -5,7 +5,7 @@ import '../styles/style.css';
 export default class AssigneeGroup extends Component {
     render() {
       return (
-          <div className="assignee-group" draggable>
+          <div className="assignee-group">
               <Assignee guy="James"/>
               <Assignee guy="Roy"/>
               <Assignee guy="Peter"/>
