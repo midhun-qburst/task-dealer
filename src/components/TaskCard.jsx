@@ -23,7 +23,14 @@ export default class TaskCard extends Component {
     render() {        
       return (
           <div className="task-card" id ={this.props.id}  ref={node => this.cardDiv = node} draggable>
-              <label htmlFor="">Task id: </label>
+              <label htmlFor="">Task id: {this.props.id} </label>
+              <div>
+                <label htmlFor="">Assignor: {this.props.assignor} </label>
+                </div>
+                <div>
+              <label htmlFor="">Mission: {this.props.task} </label>
+              </div>
+
           </div>
       );
     }

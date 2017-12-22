@@ -8,7 +8,7 @@ export default class CardHolder extends Component {
           <div className="card-holder">
           <label htmlFor="">...Unassigned...</label>
           {this.props.cards.map( (card)=> {
-              return <TaskCard id= {card.taskId}/>
+              return <TaskCard id= {card.taskId} task= {card.task} assignor = {card.assignedBy} />
           }
           )}
           </div>
